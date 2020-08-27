@@ -1,19 +1,27 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 import {Switch, Route} from "react-router";
 import {BrowserRouter as Router} from "react-router-dom";
+import useUsers from "./hooks/useUsers";
 
 function App() {
-  return (
-      <>
-        <Router>
-          <Switch>
+    const {users, getUsers} = useUsers();
+
+    useEffect(() => {
+        getUsers()
+    }, []);
+
+    return (
+        <>
+            {JSON.stringify(users)}
+            <Router>
+                <Switch>
 
 
-          </Switch>
-        </Router>
-      </>
-  );
+                </Switch>
+            </Router>
+        </>
+    );
 }
 
 export default App;
