@@ -2,7 +2,8 @@ import {UsersState} from "../../models/UsersState";
 import {Action} from "../../models/Action";
 
 const initialState: UsersState = {
-    users: []
+    users: [],
+    usersSearchResponse: null
 };
 
 export function users(state = initialState, action: Action<string, any>): UsersState {
@@ -11,6 +12,11 @@ export function users(state = initialState, action: Action<string, any>): UsersS
             return {
                 ...state,
                 users: action.payload
+            };
+        case "SEARCH_USERS_SUCCESS":
+            return {
+                ...state,
+                usersSearchResponse: action.payload
             };
         default:
             return state;

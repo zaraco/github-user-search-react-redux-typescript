@@ -6,17 +6,19 @@ import useUsers from "./hooks/useUsers";
 import useOrganizations from "./hooks/useOrganizations";
 
 function App() {
-    const {users, getUsers} = useUsers();
+    const {users, getUsers, searchUsers, usersSearchResponse} = useUsers();
     const {organizations, getOrganizations} = useOrganizations();
 
     useEffect(() => {
-        getUsers()
-        getOrganizations()
+//        getUsers()
+//        getOrganizations()
+        searchUsers({q: "zarac"})
 
     }, []);
 
     return (
         <>
+            {JSON.stringify(usersSearchResponse)}
             {JSON.stringify(users)}
             {JSON.stringify(organizations)}
             <Router>
