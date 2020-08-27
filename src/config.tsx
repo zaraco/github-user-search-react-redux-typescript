@@ -7,5 +7,6 @@ export const API_HEADERS = {
 };
 
 export const API_ENDPOINTS = {
-    users: `${API_BASE_URL}/users`
+    users: `${API_BASE_URL}/users`,
+    organizations: `${API_BASE_URL}/organizations`
 };
