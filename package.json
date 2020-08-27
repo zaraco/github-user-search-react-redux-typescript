@@ -10,6 +10,10 @@
     "@types/node": "^12.12.54",
     "@types/react": "^16.9.47",
     "@types/react-dom": "^16.9.8",
+    "@types/react-redux": "^7.1.9",
+    "@types/react-router": "^5.1.8",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/redux-api-middleware": "^3.2.2",
     "connected-react-router": "^6.8.0",
     "history": "^5.0.0",
     "react": "^16.13.1",
@@ -47,5 +51,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/redux-logger": "^3.0.8",
+    "redux-logger": "latest"
   }
 }
