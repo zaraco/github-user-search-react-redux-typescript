@@ -1,6 +1,6 @@
-import {UsersState} from "../models/UsersState";
-import {Action} from "../models/Action";
-import {OrganizationsState} from "../models/OrganizationsState";
+import {UsersState} from "../../models/UsersState";
+import {Action} from "../../models/Action";
+import {OrganizationsState} from "../../models/OrganizationsState";
 
 const initialState: OrganizationsState = {
     organizations: []

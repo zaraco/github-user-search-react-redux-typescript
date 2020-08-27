@@ -1,8 +1,8 @@
 import {useDispatch, useSelector} from "react-redux";
-import {User} from "../redux/models/User";
+import {User} from "../models/User";
 import {usersSelector} from "../redux/selectors/usersSelector";
 import {useCallback} from "react";
-import {actionGetUsers} from "../redux/actions";
+import {actionGetUsers} from "../redux/actions/usersActions";
 
 const useUsers = () => {
 

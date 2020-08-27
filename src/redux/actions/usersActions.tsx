@@ -1,5 +1,5 @@
 import {createAction} from "redux-api-middleware";
-import {API_ENDPOINTS, API_HEADERS} from "../config";
+import {API_ENDPOINTS, API_HEADERS} from "../../config";
 
 export const actionGetUsers = () => {
     return createAction({
