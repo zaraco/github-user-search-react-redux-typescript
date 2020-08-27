@@ -9,7 +9,5 @@ export const API_HEADERS = {
 };
 
 export const API_ENDPOINTS = {
-    users: `${API_BASE_URL}/users`,
-    searchUsers: (params: SearchPayload) => `${API_BASE_URL}/search/users?q=${encodeURI(params.q)}`,
-    organizations: `${API_BASE_URL}/organizations`
+    search: (params: SearchPayload) => `${API_BASE_URL}/search/users?q=${encodeURI(params.q)}`,
 };
