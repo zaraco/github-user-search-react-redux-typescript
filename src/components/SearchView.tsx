@@ -1,11 +1,10 @@
 import React from "react";
-import {User} from "../models/User";
-import {Button, Col, Form, FormControl, Navbar} from "react-bootstrap";
+import {Button, Col, Form, FormControl, Spinner} from "react-bootstrap";
 import useUsers from "../hooks/useUsers";
 
 
 export default function SearchView() {
-    const {getSearch, search, setSearchForm} = useUsers();
+    const {getSearch, search, setSearchForm, isLoading} = useUsers();
 
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchForm({
@@ -22,12 +21,20 @@ export default function SearchView() {
         <Form>
             <Form.Row className="align-items-center">
                 <Col xs="auto">
-                    <FormControl className="mb-2" type="text" placeholder="Search" value={search.q} onChange={changeHandler}/>
+                    <FormControl className="mb-2" type="text" placeholder="Search" value={search.q}
+                                 onChange={changeHandler}/>
                 </Col>
                 <Col xs="auto">
-                    <Button type="submit" className="mb-2" onClick={clickHandler}>
-                        Submit
-                    </Button>
+                    {(isLoading.search) ?
+                        <Button variant="primary" className="mb-2" disabled>
+                            <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true"/>
+                            Loading...
+                        </Button>
+                        :
+                        <Button type="submit" className="mb-2" onClick={clickHandler}>
+                            Submit
+                        </Button>
+                    }
                 </Col>
             </Form.Row>
         </Form>

@@ -1,13 +1,13 @@
 import React from "react";
 import useUsers from "../hooks/useUsers";
-import {Row, Col, Container} from "react-bootstrap";
+import {Row, Col, Container, Alert} from "react-bootstrap";
 import SearchView from "./SearchView";
 import UsersView from "./UsersView";
 import OrganizationsView from "./OrganizationsView";
 
 
 export default function Search() {
-    const {users, organizations} = useUsers();
+    const {users, organizations, isLoading, error} = useUsers();
 
 
     return (
@@ -19,10 +19,11 @@ export default function Search() {
                             Search for Github Users
                         </h1>
                     </Col>
-                </Row>
-                <Row>
                     <Col md={12}>
                         <SearchView/>
+                    </Col>
+                    <Col md={12}>
+                        {(error.search !== "") ? <Alert variant="danger">{error.search}</Alert> : ""}
                     </Col>
                 </Row>
 

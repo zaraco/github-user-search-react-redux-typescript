@@ -10,6 +10,8 @@ const useUsers = () => {
     const users = useSelector(usersSelector.users);
     const organizations = useSelector(usersSelector.organizations);
     const search = useSelector(usersSelector.search);
+    const error = useSelector(usersSelector.error);
+    const isLoading = useSelector(usersSelector.isLoading);
 
     const getSearch = useCallback((payload) => {
         dispatch(actionGetSearch(payload));
@@ -27,7 +29,9 @@ const useUsers = () => {
         organizations,
         getSearch,
         setSearchForm,
-        search
+        search,
+        error,
+        isLoading
     };
 
 };
