@@ -1,3 +1,5 @@
 export interface SearchPayload {
-    q: string
+    q: string,
+    sort: string,
+    order: string
 }

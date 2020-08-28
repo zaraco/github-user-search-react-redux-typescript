@@ -1,6 +1,7 @@
 import {createAction} from "redux-api-middleware";
 import {API_ENDPOINTS, API_HEADERS} from "../../config";
 import {SearchPayload} from "../../models/SearchPayload";
+import {Dispatch} from "redux";
 
 export const actionGetSearch = (payload: SearchPayload) => {
     return createAction({
@@ -8,5 +9,12 @@ export const actionGetSearch = (payload: SearchPayload) => {
         endpoint: () => API_ENDPOINTS.search(payload),
         method: 'GET',
         headers: API_HEADERS
+    });
+};
+
+export const actionSearchForm = (payload: SearchPayload) => (dispatch: Dispatch) => {
+    return dispatch({
+        type: 'SEARCH_FORM',
+        payload
     });
 };

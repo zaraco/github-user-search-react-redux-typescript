@@ -4,7 +4,12 @@ import {User} from "../../models/User";
 
 const initialState: UsersState = {
     users: [],
-    organizations: []
+    organizations: [],
+    search: {
+        q: "",
+        sort: "",
+        order: ""
+    }
 };
 
 export function users(state = initialState, action: Action<string, any>): UsersState {
@@ -25,6 +30,11 @@ export function users(state = initialState, action: Action<string, any>): UsersS
                 ...state,
                 users: users,
                 organizations: organizations
+            };
+        case "SEARCH_FORM":
+            return {
+                ...state,
+                search: action.payload
             };
         default:
             return state;

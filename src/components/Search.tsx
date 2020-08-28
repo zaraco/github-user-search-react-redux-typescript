@@ -2,20 +2,17 @@ import React, {useEffect} from "react";
 import useUsers from "../hooks/useUsers";
 import {Row, Col, Container, Navbar, Form, FormControl, Table} from "react-bootstrap";
 import UserView from "./UserView";
+import SearchView from "./SearchView";
 
 
 export default function Search() {
     const {users, organizations, getSearch} = useUsers();
 
-    const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-        getSearch({q: event.target.value })
-    };
-
-    const usersView = users.map((user)=>(
+    const usersView = users.map((user) => (
         <UserView user={user}/>
     ));
 
-    const organizationsView = organizations.map((organization)=>(
+    const organizationsView = organizations.map((organization) => (
         <UserView user={organization}/>
     ));
 
@@ -23,7 +20,7 @@ export default function Search() {
         <>
             <Container>
                 <Row>
-                    <Col md={10}>
+                    <Col md={12}>
                         <h1>
                             Search for Github Users
                         </h1>
@@ -31,13 +28,7 @@ export default function Search() {
                 </Row>
                 <Row>
                     <Col md={12}>
-                        <Navbar bg="dark" expand="lg">
-                            <Form>
-                                <Form.Group controlId="formBasicSearch">
-                                    <FormControl type="text" placeholder="Search" onChange={changeHandler}/>
-                                </Form.Group>
-                            </Form>
-                        </Navbar>
+                        <SearchView/>
                     </Col>
                 </Row>
 
@@ -46,8 +37,8 @@ export default function Search() {
                         <Table responsive="sm">
                             <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Table heading</th>
+                                <th>User</th>
+                                <th>Contributions</th>
                             </tr>
                             </thead>
 
@@ -60,8 +51,8 @@ export default function Search() {
                         <Table responsive="sm">
                             <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Table heading</th>
+                                <th>Company</th>
+                                <th>People</th>
                             </tr>
                             </thead>
 

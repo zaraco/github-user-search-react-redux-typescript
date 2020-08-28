@@ -5,8 +5,11 @@ import {User} from "../models/User";
 export default function UserView(props: {user: User}) {
     return (
         <tr>
-            <td>{props.user.id}</td>
-            <td>{props.user.login}</td>
+            <td>
+                <p>{props.user.login}</p>
+                <p>{props.user.name}</p>
+            </td>
+            <td></td>
         </tr>
     )
 }
