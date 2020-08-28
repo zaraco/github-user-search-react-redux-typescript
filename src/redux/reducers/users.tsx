@@ -10,6 +10,11 @@ const initialState: UsersState = {
         sort: "",
         order: ""
     },
+    submittedSearch: {
+        q: "",
+        sort: "",
+        order: ""
+    },
     isLoading: {
         search: false
     },
@@ -40,6 +45,7 @@ export function users(state = initialState, action: Action<string, any>): UsersS
                     ...state.isLoading,
                     search: false
                 },
+                submittedSearch: state.search,
                 error: {
                     ...state.error,
                     search: ""

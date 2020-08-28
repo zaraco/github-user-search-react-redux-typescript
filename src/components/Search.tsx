@@ -4,10 +4,12 @@ import {Row, Col, Container, Alert} from "react-bootstrap";
 import SearchView from "./SearchView";
 import UsersView from "./UsersView";
 import OrganizationsView from "./OrganizationsView";
+import UsersEmptyView from "./UsersEmptyView";
+import EmptyResultView from "./EmptyResultView";
 
 
 export default function Search() {
-    const {users, organizations, isLoading, error} = useUsers();
+    const {users, organizations, submittedSearch, error} = useUsers();
 
 
     return (
@@ -27,14 +29,24 @@ export default function Search() {
                     </Col>
                 </Row>
 
-                <Row>
-                    <Col md={6}>
-                        <UsersView users={users}/>
-                    </Col>
-                    <Col md={6}>
-                        <OrganizationsView organizations={organizations}/>
-                    </Col>
-                </Row>
+                {(submittedSearch.q === "") ?
+                    <Row><Col><EmptyResultView/></Col></Row> :
+                    <Row>
+                        <Col md={6}>
+                            {(users.length > 0) ?
+                                <UsersView users={users}/>
+                                : <UsersEmptyView/>
+                            }
+                        </Col>
+                        <Col md={6}>
+                            {(organizations.length > 0) ?
+                                <OrganizationsView organizations={organizations}/>
+                                : <UsersEmptyView/>
+                            }
+                        </Col>
+                    </Row>
+                }
+
             </Container>
         </>
     )

@@ -27,7 +27,7 @@ export default function SearchView() {
                 <Col xs="auto">
                     {(isLoading.search) ?
                         <Button variant="primary" className="mb-2" disabled>
-                            <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true"/>
+                            <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true"/>
                             Loading...
                         </Button>
                         :

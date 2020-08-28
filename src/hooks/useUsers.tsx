@@ -10,6 +10,7 @@ const useUsers = () => {
     const users = useSelector(usersSelector.users);
     const organizations = useSelector(usersSelector.organizations);
     const search = useSelector(usersSelector.search);
+    const submittedSearch = useSelector(usersSelector.submittedSearch);
     const error = useSelector(usersSelector.error);
     const isLoading = useSelector(usersSelector.isLoading);
 
@@ -30,6 +31,7 @@ const useUsers = () => {
         getSearch,
         setSearchForm,
         search,
+        submittedSearch,
         error,
         isLoading
     };

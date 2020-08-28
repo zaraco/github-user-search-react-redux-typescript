@@ -1,6 +1,6 @@
 import React from "react";
 import {User} from "../models/User";
-import {Col, Table} from "react-bootstrap";
+import {Table} from "react-bootstrap";
 import UserView from "./UserView";
 
 
