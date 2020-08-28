@@ -1,20 +1,14 @@
-import React, {useEffect} from "react";
+import React from "react";
 import useUsers from "../hooks/useUsers";
-import {Row, Col, Container, Navbar, Form, FormControl, Table} from "react-bootstrap";
-import UserView from "./UserView";
+import {Row, Col, Container} from "react-bootstrap";
 import SearchView from "./SearchView";
+import UsersView from "./UsersView";
+import OrganizationsView from "./OrganizationsView";
 
 
 export default function Search() {
-    const {users, organizations, getSearch} = useUsers();
+    const {users, organizations} = useUsers();
 
-    const usersView = users.map((user) => (
-        <UserView user={user}/>
-    ));
-
-    const organizationsView = organizations.map((organization) => (
-        <UserView user={organization}/>
-    ));
 
     return (
         <>
@@ -34,32 +28,10 @@ export default function Search() {
 
                 <Row>
                     <Col md={6}>
-                        <Table responsive="sm">
-                            <thead>
-                            <tr>
-                                <th>User</th>
-                                <th>Contributions</th>
-                            </tr>
-                            </thead>
-
-                            <tbody>
-                            {usersView}
-                            </tbody>
-                        </Table>
+                        <UsersView users={users}/>
                     </Col>
                     <Col md={6}>
-                        <Table responsive="sm">
-                            <thead>
-                            <tr>
-                                <th>Company</th>
-                                <th>People</th>
-                            </tr>
-                            </thead>
-
-                            <tbody>
-                            {organizationsView}
-                            </tbody>
-                        </Table>
+                        <OrganizationsView organizations={organizations}/>
                     </Col>
                 </Row>
             </Container>
