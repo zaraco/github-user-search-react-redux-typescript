@@ -1,12 +1,12 @@
 import React from "react";
 import useUsers from "../hooks/useUsers";
-import {Row, Col, Container, Alert} from "react-bootstrap";
+import {Row, Col, Container, Alert, Tabs, Tab} from "react-bootstrap";
 import SearchView from "./SearchView";
 import UsersView from "./UsersView";
 import OrganizationsView from "./OrganizationsView";
 import UsersEmptyView from "./UsersEmptyView";
 import EmptyResultView from "./EmptyResultView";
-
+import './Search.css'
 
 export default function Search() {
     const {users, organizations, submittedSearch, error} = useUsers();
@@ -47,6 +47,14 @@ export default function Search() {
                     </Row>
                 }
 
+                <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+                    <Tab eventKey="home" title="Home">
+                    </Tab>
+                    <Tab eventKey="profile" title="Profile">
+                    </Tab>
+                    <Tab eventKey="contact" title="Contact" disabled>
+                    </Tab>
+                </Tabs>
             </Container>
         </>
     )
