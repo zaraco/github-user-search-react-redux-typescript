@@ -1,5 +1,7 @@
-import React, {useEffect} from 'react';
+import React, {useEffect} from "react";
 import useUsers from "../hooks/useUsers";
+import {Row, Col, Container} from "react-bootstrap";
+
 
 export default function Search() {
     const {users, organizations, getSearch} = useUsers();
@@ -11,8 +13,15 @@ export default function Search() {
 
     return (
         <>
-            {JSON.stringify(users)}
-            {JSON.stringify(organizations)}
+            <Container>
+                <Row>
+                    <Col md={4}>
+
+                        {JSON.stringify(users)}
+                        {JSON.stringify(organizations)}
+                    </Col>
+                </Row>
+            </Container>
         </>
     )
 }
