@@ -4,5 +4,7 @@ import {SearchPayload} from "./SearchPayload";
 export interface UsersState {
     users: Array<User>,
     organizations: Array<User>,
-    search: SearchPayload
+    search: SearchPayload,
+    isLoading: {search: boolean},
+    error: {search: string}
 }

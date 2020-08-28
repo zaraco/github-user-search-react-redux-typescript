@@ -9,6 +9,12 @@ const initialState: UsersState = {
         q: "",
         sort: "",
         order: ""
+    },
+    isLoading: {
+        search: false
+    },
+    error: {
+        search: ""
     }
 };
 
@@ -29,7 +35,35 @@ export function users(state = initialState, action: Action<string, any>): UsersS
             return {
                 ...state,
                 users: users,
-                organizations: organizations
+                organizations: organizations,
+                isLoading: {
+                    ...state.isLoading,
+                    search: false
+                },
+                error: {
+                    ...state.error,
+                    search: ""
+                },
+            };
+        case "GET_SEARCH_FAILURE":
+            return {
+                ...state,
+                isLoading: {
+                    ...state.isLoading,
+                    search: false
+                },
+                error: {
+                    ...state.error,
+                    search: action.payload.message
+                },
+            };
+        case "GET_SEARCH_REQUEST":
+            return {
+                ...state,
+                isLoading: {
+                    ...state.isLoading,
+                    search: true
+                }
             };
         case "SEARCH_FORM":
             return {
