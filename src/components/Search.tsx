@@ -1,31 +1,23 @@
 import React, {useEffect} from "react";
 import useUsers from "../hooks/useUsers";
 import {Row, Col, Container, Navbar, Form, FormControl, Table} from "react-bootstrap";
+import UserView from "./UserView";
 
 
 export default function Search() {
     const {users, organizations, getSearch} = useUsers();
 
-    // {JSON.stringify(users)}
-    //  {JSON.stringify(organizations)}
-
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         getSearch({q: event.target.value })
-    }
+    };
 
     const usersView = users.map((user)=>(
-        <tr>
-            <td>{user.id}</td>
-            <td>{user.login}</td>
-        </tr>
-    ))
+        <UserView user={user}/>
+    ));
 
     const organizationsView = organizations.map((organization)=>(
-        <tr>
-            <td>{organization.id}</td>
-            <td>{organization.login}</td>
-        </tr>
-    ))
+        <UserView user={organization}/>
+    ));
 
     return (
         <>
