@@ -6,13 +6,26 @@ import {Row, Col, Container, Navbar, Form, FormControl, Table} from "react-boots
 export default function Search() {
     const {users, organizations, getSearch} = useUsers();
 
-    useEffect(() => {
-        getSearch({q: "zarac"})
-
-    }, []);
-
     // {JSON.stringify(users)}
     //  {JSON.stringify(organizations)}
+
+    const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+        getSearch({q: event.target.value })
+    }
+
+    const usersView = users.map((user)=>(
+        <tr>
+            <td>{user.id}</td>
+            <td>{user.login}</td>
+        </tr>
+    ))
+
+    const organizationsView = organizations.map((organization)=>(
+        <tr>
+            <td>{organization.id}</td>
+            <td>{organization.login}</td>
+        </tr>
+    ))
 
     return (
         <>
@@ -29,7 +42,7 @@ export default function Search() {
                         <Navbar bg="dark" expand="lg">
                             <Form>
                                 <Form.Group controlId="formBasicSearch">
-                                    <FormControl type="text" placeholder="Search"/>
+                                    <FormControl type="text" placeholder="Search" onChange={changeHandler}/>
                                 </Form.Group>
                             </Form>
                         </Navbar>
@@ -43,16 +56,11 @@ export default function Search() {
                             <tr>
                                 <th>#</th>
                                 <th>Table heading</th>
-                                <th>Table heading</th>
                             </tr>
                             </thead>
 
                             <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Table cell</td>
-                                <td>Table cell</td>
-                            </tr>
+                            {usersView}
                             </tbody>
                         </Table>
                     </Col>
@@ -62,16 +70,11 @@ export default function Search() {
                             <tr>
                                 <th>#</th>
                                 <th>Table heading</th>
-                                <th>Table heading</th>
                             </tr>
                             </thead>
 
                             <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Table cell</td>
-                                <td>Table cell</td>
-                            </tr>
+                            {organizationsView}
                             </tbody>
                         </Table>
                     </Col>
