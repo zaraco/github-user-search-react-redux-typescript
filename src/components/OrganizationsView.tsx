@@ -11,17 +11,21 @@ export default function OrganizationsView(props: { organizations: Array<User> })
     ));
 
     return (
-        <Table responsive="sm">
-            <thead>
-            <tr>
-                <th>User</th>
-                <th>Contributions</th>
-            </tr>
-            </thead>
+        <>
+            organizations ({props.organizations.length})
 
-            <tbody>
-            {organizationsView}
-            </tbody>
-        </Table>
+            <Table responsive="sm">
+                <thead>
+                <tr>
+                    <th>Organization</th>
+                    <th>Contributions</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {organizationsView}
+                </tbody>
+            </Table>
+        </>
     )
 }

@@ -11,17 +11,20 @@ export default function UsersView(props: { users: Array<User> }) {
     ));
 
     return (
-        <Table responsive="sm">
-            <thead>
-            <tr>
-                <th>User</th>
-                <th>Contributions</th>
-            </tr>
-            </thead>
+        <>
+            users ({props.users.length})
+            <Table responsive="sm">
+                <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Contributions</th>
+                </tr>
+                </thead>
 
-            <tbody>
-            {usersView}
-            </tbody>
-        </Table>
+                <tbody>
+                {usersView}
+                </tbody>
+            </Table>
+        </>
     )
 }
