@@ -1,5 +1,15 @@
 @media(min-width : 768px) {
+    .tab-content {
+        width: 100% !important;
+    }
     .tab-content > .tab-pane {
-        display: block;
+        display: block !important;
+        opacity: 1 !important;
+        width: 50% !important;
+        padding: 10px;
+        float: left !important;
+    }
+    .nav-tabs {
+        display: none !important;
     }
 }

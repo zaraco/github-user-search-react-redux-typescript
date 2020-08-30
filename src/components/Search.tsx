@@ -31,30 +31,22 @@ export default function Search() {
 
                 {(submittedSearch.q === "") ?
                     <Row><Col><EmptyResultView/></Col></Row> :
-                    <Row>
-                        <Col md={6}>
+                    <Tabs defaultActiveKey="users" id="tab">
+                        <Tab eventKey="users" title="Users">
                             {(users.length > 0) ?
                                 <UsersView users={users}/>
                                 : <UsersEmptyView/>
                             }
-                        </Col>
-                        <Col md={6}>
+                        </Tab>
+                        <Tab eventKey="organizations" title="Organizations">
                             {(organizations.length > 0) ?
                                 <OrganizationsView organizations={organizations}/>
                                 : <UsersEmptyView/>
                             }
-                        </Col>
-                    </Row>
+                        </Tab>
+                    </Tabs>
                 }
 
-                <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
-                    <Tab eventKey="home" title="Home">
-                    </Tab>
-                    <Tab eventKey="profile" title="Profile">
-                    </Tab>
-                    <Tab eventKey="contact" title="Contact" disabled>
-                    </Tab>
-                </Tabs>
             </Container>
         </>
     )
