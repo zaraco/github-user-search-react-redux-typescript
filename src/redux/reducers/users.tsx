@@ -20,7 +20,9 @@ const initialState: UsersState = {
     },
     error: {
         search: ""
-    }
+    },
+    showMore: false
+
 };
 
 export function users(state = initialState, action: Action<string, any>): UsersState {
@@ -76,6 +78,14 @@ export function users(state = initialState, action: Action<string, any>): UsersS
                 ...state,
                 search: action.payload
             };
+
+            case "SHOW_MORE":
+            return {
+                ...state,
+                showMore: action.payload
+            };
+
+
         default:
             return state;
     }

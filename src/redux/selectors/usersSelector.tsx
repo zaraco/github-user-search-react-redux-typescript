@@ -6,5 +6,7 @@ export const usersSelector = {
     search: (state: State) => state.users.search,
     submittedSearch: (state: State) => state.users.submittedSearch,
     isLoading: (state: State) => state.users.isLoading,
-    error: (state: State) => state.users.error
+    error: (state: State) => state.users.error,
+    showMore: (state: State) => state.users.showMore,
+
 };

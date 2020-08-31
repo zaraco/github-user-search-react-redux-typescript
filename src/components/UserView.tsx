@@ -8,10 +8,10 @@ export default function UserView(props: { user: User }) {
         <tr>
             <td>
                 <Row>
-                    <Col xs={2}>
+                    <Col md={3}>
                         <Image src={props.user.avatar_url} roundedCircle style={{width: "50px", height: "50px"}}/>
                     </Col>
-                    <Col xs={10}>
+                    <Col md={9}>
                         <p>{props.user.login}</p>
                     </Col>
                 </Row>

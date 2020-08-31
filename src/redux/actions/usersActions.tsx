@@ -18,3 +18,10 @@ export const actionSearchForm = (payload: SearchPayload) => (dispatch: Dispatch)
         payload
     });
 };
+
+export const actionShowMore = (payload: boolean) => (dispatch: Dispatch) => {
+    return dispatch({
+        type: 'SHOW_MORE',
+        payload
+    });
+};

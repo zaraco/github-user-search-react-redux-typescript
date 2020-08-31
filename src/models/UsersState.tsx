@@ -8,4 +8,5 @@ export interface UsersState {
     submittedSearch: SearchPayload,
     isLoading: {search: boolean},
     error: {search: string}
+    showMore: boolean
 }
