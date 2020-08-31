@@ -70,11 +70,11 @@ export default function UsersView(props: { users: Array<User>, title: string, ta
                 <tr>
                     <th onClick={sortNameHandler}>
                         {props.tableHeader}
-                        { (submittedSearch.sort === "") ? <FontAwesomeIcon icon={(submittedSearch.order === "desc") ? faChevronDown : faChevronUp}/> : "" }
+                        { (submittedSearch.sort === "") ? <FontAwesomeIcon icon={(submittedSearch.order !== "asc") ? faChevronUp : faChevronDown}/> : "" }
                     </th>
                     <th onClick={sortContributionHandler}>
                         Contributions
-                        { (submittedSearch.sort === "repositories") ? <FontAwesomeIcon icon={(submittedSearch.order === "desc") ? faChevronDown : faChevronUp}/> : "" }
+                        { (submittedSearch.sort === "repositories") ? <FontAwesomeIcon icon={(submittedSearch.order !== "asc") ? faChevronUp : faChevronDown}/> : "" }
                     </th>
                 </tr>
                 </thead>
