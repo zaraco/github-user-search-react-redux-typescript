@@ -85,6 +85,9 @@ export function users(state = initialState, action: Action<string, any>): UsersS
                 showMore: action.payload
             };
 
+        case "RESET":
+            return initialState;
+
 
         default:
             return state;

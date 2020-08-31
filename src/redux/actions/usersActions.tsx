@@ -25,3 +25,9 @@ export const actionShowMore = (payload: boolean) => (dispatch: Dispatch) => {
         payload
     });
 };
+
+export const actionReset = () => (dispatch: Dispatch) => {
+    return dispatch({
+        type: 'RESET'
+    });
+};

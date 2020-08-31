@@ -1,7 +1,7 @@
 import {useDispatch, useSelector} from "react-redux";
 import {usersSelector} from "../redux/selectors/usersSelector";
 import {useCallback} from "react";
-import {actionGetSearch, actionSearchForm, actionShowMore} from "../redux/actions/usersActions";
+import {actionGetSearch, actionReset, actionSearchForm, actionShowMore} from "../redux/actions/usersActions";
 import {UsersSearchResponse} from "../models/UsersSearchResponse";
 
 const useUsers = () => {
@@ -27,6 +27,10 @@ const useUsers = () => {
         dispatch(actionShowMore(payload));
     },[]);
 
+    const reset = useCallback(() => {
+        dispatch(actionReset());
+    },[]);
+
 
 
 
@@ -40,7 +44,8 @@ const useUsers = () => {
         error,
         isLoading,
         showMore,
-        setShowMore
+        setShowMore,
+        reset
 
     };
 
