@@ -9,8 +9,9 @@ export default function SearchView() {
 
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchForm({
-            ...search,
-            q: event.target.value
+            q: event.target.value,
+            order: "",
+            sort: ""
         })
     };
 

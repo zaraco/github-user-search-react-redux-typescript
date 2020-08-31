@@ -4,11 +4,13 @@ import {Badge, Table, Button} from "react-bootstrap";
 import UserView from "./UserView";
 import './UsersView.css';
 import useUsers from "../hooks/useUsers";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faChevronDown, faChevronUp} from "@fortawesome/free-solid-svg-icons";
 
 
 export default function UsersView(props: { users: Array<User>, title: string, tableHeader: string }) {
 
-    const {showMore, setShowMore} = useUsers();
+    const {showMore, setShowMore, getSearch, submittedSearch, setSearchForm} = useUsers();
 
     let usersCompact;
 
@@ -29,14 +31,51 @@ export default function UsersView(props: { users: Array<User>, title: string, ta
         setShowMore(!showMore)
     }
 
+
+    const sortNameHandler = (event: React.MouseEvent<HTMLTableHeaderCellElement, MouseEvent>) => {
+        let order = (submittedSearch.order === "asc") ? "desc" : "asc";
+
+        setSearchForm({
+            ...submittedSearch,
+            sort: "",
+            order: order
+        })
+
+        getSearch({
+            ...submittedSearch,
+            sort: "",
+            order: order
+        })
+    };
+
+    const sortContributionHandler = (event: React.MouseEvent<HTMLTableHeaderCellElement, MouseEvent>) => {
+        let order = (submittedSearch.order === "asc") ? "desc" : "asc";
+        setSearchForm({
+            ...submittedSearch,
+            sort: "repositories",
+            order: order
+        })
+        getSearch({
+            ...submittedSearch,
+            sort: "repositories",
+            order: order
+        })
+    };
+
     return (
         <>
             {props.title} <Badge variant="dark" className="badge-users">{props.users.length}</Badge>
             <Table responsive="sm">
                 <thead>
                 <tr>
-                    <th>{props.tableHeader}</th>
-                    <th>Contributions</th>
+                    <th onClick={sortNameHandler}>
+                        {props.tableHeader}
+                        { (submittedSearch.sort === "") ? <FontAwesomeIcon icon={(submittedSearch.order === "desc") ? faChevronDown : faChevronUp}/> : "" }
+                    </th>
+                    <th onClick={sortContributionHandler}>
+                        Contributions
+                        { (submittedSearch.sort === "repositories") ? <FontAwesomeIcon icon={(submittedSearch.order === "desc") ? faChevronDown : faChevronUp}/> : "" }
+                    </th>
                 </tr>
                 </thead>
 
