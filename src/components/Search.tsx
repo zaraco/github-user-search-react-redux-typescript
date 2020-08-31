@@ -17,7 +17,7 @@ export default function Search() {
             <Container>
                 <Row>
                     <Col md={12}>
-                        <h1>
+                        <h1 className="content">
                             Search for Github Users
                         </h1>
                     </Col>

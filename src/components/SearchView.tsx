@@ -1,6 +1,7 @@
 import React from "react";
-import {Button, Col, Form, FormControl, Spinner} from "react-bootstrap";
+import {Button, Col, Form, Row, Spinner} from "react-bootstrap";
 import useUsers from "../hooks/useUsers";
+import EmptyResultView from "./EmptyResultView";
 
 
 export default function SearchView() {
@@ -17,26 +18,30 @@ export default function SearchView() {
         event.preventDefault();
         getSearch(search)
     };
+
     return (
-        <Form>
-            <Form.Row className="align-items-center">
-                <Col xs="auto">
-                    <FormControl className="mb-2" type="text" placeholder="Search" value={search.q}
-                                 onChange={changeHandler}/>
+        <>
+            <Row>
+                <Col md={7}>
+                    <Form className="search">
+                        <Form.Group controlId="formBasicSearch">
+                            <Form.Control type="text" placeholder="Search" value={search.q} onChange={changeHandler} />
+                        </Form.Group>
+                    </Form>
                 </Col>
-                <Col xs="auto">
+                <Col md={3}>
                     {(isLoading.search) ?
-                        <Button variant="primary" className="mb-2" disabled>
+                        <Button variant="secondary" className="btn-disabled" disabled>
                             <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true"/>
                             Loading...
                         </Button>
                         :
-                        <Button type="submit" className="mb-2" onClick={clickHandler}>
+                        <Button type="submit" variant="dark" className="btn" onClick={clickHandler}>
                             Submit
                         </Button>
                     }
                 </Col>
-            </Form.Row>
-        </Form>
+            </Row>
+        </>
     )
 }
