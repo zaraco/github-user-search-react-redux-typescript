@@ -1,6 +1,6 @@
 import React from "react";
 import {User} from "../models/User";
-import {Col, Table} from "react-bootstrap";
+import {Badge, Table} from "react-bootstrap";
 import UserView from "./UserView";
 
 
@@ -12,7 +12,7 @@ export default function OrganizationsView(props: { organizations: Array<User> })
 
     return (
         <>
-            organizations ({props.organizations.length})
+            organizations {props.organizations.length ? <Badge variant="dark">{props.organizations.length}</Badge> : null}
 
             <Table responsive="sm">
                 <thead>
