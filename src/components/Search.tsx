@@ -3,7 +3,6 @@ import useUsers from "../hooks/useUsers";
 import {Row, Col, Container, Alert, Tabs, Tab} from "react-bootstrap";
 import SearchView from "./SearchView";
 import UsersView from "./UsersView";
-import OrganizationsView from "./OrganizationsView";
 import UsersEmptyView from "./UsersEmptyView";
 import EmptyResultView from "./EmptyResultView";
 import './Search.css'
