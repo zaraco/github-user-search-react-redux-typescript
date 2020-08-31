@@ -33,13 +33,13 @@ export default function Search() {
                     <Tabs defaultActiveKey="users" id="tab">
                         <Tab eventKey="users" title="Users">
                             {(users.length > 0) ?
-                                <UsersView users={users}/>
+                                <UsersView users={users} title="Users" tableHeader="user"/>
                                 : <UsersEmptyView/>
                             }
                         </Tab>
                         <Tab eventKey="organizations" title="Organizations">
                             {(organizations.length > 0) ?
-                                <OrganizationsView organizations={organizations}/>
+                                <UsersView users={organizations} title="Organizations" tableHeader="organization"/>
                                 : <UsersEmptyView/>
                             }
                         </Tab>

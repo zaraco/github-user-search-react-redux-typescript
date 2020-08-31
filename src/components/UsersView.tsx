@@ -6,7 +6,7 @@ import './UsersView.css';
 import useUsers from "../hooks/useUsers";
 
 
-export default function UsersView(props: { users: Array<User> }) {
+export default function UsersView(props: { users: Array<User>, title: string, tableHeader: string }) {
 
     const {showMore, setShowMore} = useUsers();
 
@@ -31,11 +31,11 @@ export default function UsersView(props: { users: Array<User> }) {
 
     return (
         <>
-            users <Badge variant="dark" className="badge-users">{props.users.length}</Badge>
+            {props.title} <Badge variant="dark" className="badge-users">{props.users.length}</Badge>
             <Table responsive="sm">
                 <thead>
                 <tr>
-                    <th>User</th>
+                    <th>{props.tableHeader}</th>
                     <th>Contributions</th>
                 </tr>
                 </thead>
