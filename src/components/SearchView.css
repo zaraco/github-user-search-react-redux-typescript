@@ -10,3 +10,10 @@
     filter: none;
     color: #272727;
 }
+
+
+.content .btn:hover {
+    background-color: #979797;
+
+
+}
