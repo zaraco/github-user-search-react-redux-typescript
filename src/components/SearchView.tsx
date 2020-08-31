@@ -25,7 +25,7 @@ export default function SearchView() {
                 <Col md={10}>
                     <Form className="search">
                         <Form.Group controlId="formBasicSearch">
-                            <Form.Control type="text" placeholder="Search" value={search.q} onChange={changeHandler} />
+                            <Form.Control type="text" placeholder="Type a user name here" value={search.q} onChange={changeHandler} />
                         </Form.Group>
                     </Form>
                 </Col>
