@@ -30,7 +30,7 @@ export function users(state = initialState, action: Action<string, any>): UsersS
         case "GET_SEARCH_SUCCESS":
             let users: Array<User> = [];
             let organizations: Array<User> = [];
-            if(action.payload && action.payload.items) {
+            if (action.payload && action.payload.items) {
                 let items: Array<User> = action.payload.items;
                 users = items.filter(function (item: User) {
                     return (item.type === "User");
@@ -79,7 +79,7 @@ export function users(state = initialState, action: Action<string, any>): UsersS
                 search: action.payload
             };
 
-            case "SHOW_MORE":
+        case "SHOW_MORE":
             return {
                 ...state,
                 showMore: action.payload
