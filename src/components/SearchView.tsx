@@ -1,7 +1,7 @@
 import React from "react";
 import {Button, Col, Form, Row, Spinner} from "react-bootstrap";
 import useUsers from "../hooks/useUsers";
-import EmptyResultView from "./EmptyResultView";
+import './SearchView.css';
 
 
 export default function SearchView() {
@@ -21,15 +21,15 @@ export default function SearchView() {
 
     return (
         <>
-            <Row>
-                <Col md={7}>
+            <Row className="content">
+                <Col md={10}>
                     <Form className="search">
                         <Form.Group controlId="formBasicSearch">
                             <Form.Control type="text" placeholder="Search" value={search.q} onChange={changeHandler} />
                         </Form.Group>
                     </Form>
                 </Col>
-                <Col md={3}>
+                <Col md={2}>
                     {(isLoading.search) ?
                         <Button variant="secondary" className="btn-disabled" disabled>
                             <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true"/>

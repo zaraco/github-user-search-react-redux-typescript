@@ -13,11 +13,10 @@ export default function Search() {
 
 
     return (
-        <>
-            <Container>
+        <div className="content">
                 <Row>
                     <Col md={12}>
-                        <h1 className="content">
+                        <h1 className="text">
                             Search for Github Users
                         </h1>
                     </Col>
@@ -46,8 +45,6 @@ export default function Search() {
                         </Tab>
                     </Tabs>
                 }
-
-            </Container>
-        </>
+        </div>
     )
 }
