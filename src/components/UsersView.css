@@ -1,4 +1,9 @@
 .badge-users:hover {
-    cursor: pointer;
     background-color: #979797;
+}
+
+.btn-show {
+    border: none;
+    background-color: white;
+
 }

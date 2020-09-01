@@ -1,6 +1,6 @@
 import React from "react";
 import {User} from "../models/User";
-import {Badge, Table, Button} from "react-bootstrap";
+import {Badge, Table, Button, Row, Col} from "react-bootstrap";
 import UserView from "./UserView";
 import './UsersView.css';
 import useUsers from "../hooks/useUsers";
@@ -78,14 +78,17 @@ export default function UsersView(props: { users: Array<User>, title: string, ta
                     </th>
                 </tr>
                 </thead>
-
                 <tbody>
                 {usersView}
                 </tbody>
             </Table>
-            <Button variant="secondary" onClick={clickHandler}>
-                {showMore ?'Show Less' : 'Show More' }
+            <Row>
+                <Col md={{offset:'4', span:'5'}}>
+            <Button className="btn-show" variant="light" onClick={clickHandler}>
+                {showMore ?'SHOW LESS' : 'SHOW MORE' }
             </Button>
+                </Col>
+            </Row>
         </>
     )
 }

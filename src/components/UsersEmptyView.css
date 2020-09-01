@@ -1,0 +1,13 @@
+
+.content .image-no-user {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.content .text .text-no-user {
+  font-size: 15px;
+}
+
+.content .btn-no-user:hover {
+    background-color: #db7e98;
+}
