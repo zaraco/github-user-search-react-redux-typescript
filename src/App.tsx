@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {Container} from "react-bootstrap";
 import {Switch, Route} from "react-router";
-import {BrowserRouter as Router} from "react-router-dom";
+import {HashRouter as Router} from "react-router-dom";
 import Search from "./components/Search";
 
 function App() {
