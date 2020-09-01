@@ -7,3 +7,14 @@
     background-color: white;
 
 }
+
+.fontawesome-users {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.fontawesome-organizations {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
