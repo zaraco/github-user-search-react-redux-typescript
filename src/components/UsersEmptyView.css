@@ -1,7 +1,6 @@
 
 .content .image-no-user {
     margin-top: 30px;
-    margin-bottom: 30px;
 }
 
 .content .text .text-no-user {
@@ -9,5 +8,5 @@
 }
 
 .content .btn-no-user:hover {
-    background-color: #db7e98;
+    background-color: #dbadb2;
 }

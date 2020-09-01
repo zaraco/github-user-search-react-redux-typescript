@@ -19,7 +19,7 @@ export default function Search() {
                             Search for Github Users
                         </h1>
                     </Col>
-                    <Col md={12}>
+                    <Col>
                         <SearchView/>
                     </Col>
                     <Col md={12}>
